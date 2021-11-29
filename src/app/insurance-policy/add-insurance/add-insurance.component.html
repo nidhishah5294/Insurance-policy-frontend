@@ -2,8 +2,11 @@
     <h1 class='txt-align' *ngIf="!isEdit">{{addDetailLable}}</h1>
     <h1 class='txt-align' *ngIf="isEdit">{{editDetailLable}}</h1>
     <div>
+
         <form [formGroup]="form" (ngSubmit)="submitDetail()">
+
             <div class="form-row">
+                <div class="form-group col"></div>
                 <div class="form-group col">
                     <label for="policyStartDate">{{policyStartDateLable}}</label>
                     <input type="date" formControlName="policyStartDate" class="form-control"
@@ -17,6 +20,20 @@
                         <div *ngIf="dateError['isGreater']">{{dateCompareLAble}}</div>
                     </div>
                 </div>
+                <div class="form-group col"></div>
+                <div class="form-group col">
+                    <label for="policyDescription">{{policyDescriptionLable}}</label>
+                    <textarea formControlName="policyDescription" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.policyDescription.errors }" rows="2"
+                        maxlength="50"></textarea>
+
+                </div>
+                <div class="form-group col"></div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col"></div>
                 <div class="form-group col">
                     <label for="policyEndDate">{{policyEndDateLable}}</label>
                     <input type="date" formControlName="policyEndDate" class="form-control"
@@ -29,19 +46,19 @@
                         class="invalid-feedback">
                         <div *ngIf="dateError['isGreater']">{{dateCompareLAble}}</div>
                     </div>
+
+
                 </div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+
             </div>
+
             <div class="form-row">
+                <div class="form-group col"></div>
                 <div class="form-group col">
-                    <label for="policyDescription">{{policyDescriptionLable}}</label>
-                    <textarea formControlName="policyDescription" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.policyDescription.errors }" rows="3"
-                        maxlength="50"></textarea>
-                    <!-- <div *ngIf="submitted && f.policyDescription.errors" class="invalid-feedback">
-                    <div *ngIf="f.policyDescription.errors.required">{{descriptionRequiredLable}}</div>
-                </div> -->
-                </div>
-                <div class="form-group col">
+                    <br>
                     <label for="customerFirstName">{{customerFirstNameLable}}</label>
                     <input type="text" formControlName="customerFirstName" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.customerFirstName.errors }" />
@@ -49,17 +66,32 @@
                         <div *ngIf="f.customerFirstName.errors.required">{{firstNameRequiredLable}}</div>
                     </div>
                 </div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+
+
             </div>
             <div class="form-row">
+                <div class="form-group col"></div>
                 <div class="form-group col">
+                    <br>
                     <label for="customerSurname">{{customerSurnameLable}}</label>
                     <input type="text" formControlName="customerSurname" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.customerSurname.errors }" />
                     <div *ngIf="submitted && f.customerSurname.errors" class="invalid-feedback">
                         <div *ngIf="f.customerSurname.errors.required">{{surnameRequiredLable}}</div>
                     </div>
+
                 </div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col"></div>
                 <div class="form-group col">
+                    <br>
                     <label for="customerDateOfBirth">{{customerDateOfBirthLable}}</label>
                     <input type="date" formControlName="customerDateOfBirth" class="form-control"
                         value="{{ customer_DOB | date:'yyyy-MM-dd' }}"
@@ -68,14 +100,30 @@
                         <div *ngIf="f.customerDateOfBirth.errors.required">{{dateOfBirthRequiredLable}}</div>
                     </div>
                 </div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
             </div>
-            <div class="form-group">
-                <button [disabled]="loading" class="btn btn-primary">
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                    Save
-                </button>
-                <a (click)="goToBack()" class="btn btn-link">Cancel</a>
+
+            <div class="form-row">
+                <div class="form-group col"></div>
+                <div class="form-group col">
+                    <br>
+
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Save
+                    </button>
+                    <a (click)="goToBack()" class="btn btn-link">Cancel</a>
+
+                </div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
+                <div class="form-group col"></div>
             </div>
+
+
+
         </form>
     </div>
 </div>

@@ -20,7 +20,6 @@
       <td mat-cell *matCellDef="let element"> {{element.policy_end_date | date:'MM/dd/YYYY'}} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
     <ng-container matColumnDef="Description">
       <th mat-header-cell *matHeaderCellDef> {{displayedColumns[3]}} </th>
       <td mat-cell *matCellDef="let element"> {{element.policy_description}} </td>
